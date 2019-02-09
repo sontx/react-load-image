@@ -1,0 +1,24 @@
+{
+	"compilerOptions": {
+		"outDir": "lib",
+		"module": "esnext",
+		"target": "es2015",
+		"lib": ["es6", "dom"],
+		"sourceMap": false,
+		"baseUrl": ".",
+		"jsx": "react",
+		"allowSyntheticDefaultImports": true,
+		"moduleResolution": "node",
+		"rootDirs": ["/src", "/test", "/mock", "./src/@types"],
+		"forceConsistentCasingInFileNames": true,
+		"noImplicitReturns": true,
+		"suppressImplicitAnyIndexErrors": true,
+		"noUnusedLocals": true,
+		"emitDecoratorMetadata": true,
+		"allowJs": true,
+		"experimentalDecorators": true,
+		"strictPropertyInitialization": false,
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "lib"]
+}

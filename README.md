@@ -10,9 +10,11 @@ This React component allows you to display
 content while waiting for the image to load, as well as by showing alternate
 content if the image fails to load.
 
+**Typescript** is supported.
+
 Installing
 -----
-`npm i react-load-image`
+`npm i @sontx/react-load-image`
 
 
 Usage
@@ -20,7 +22,7 @@ Usage
 
 ```js
 import React from 'react';
-import ImageLoader from 'react-load-image';
+import ImageLoader from '@sontx/react-load-image';
 
 function Preloader(props) {
   return <img src="spinner.gif" />;
@@ -42,12 +44,14 @@ React.render((
 Props
 -----
 
-Name        | Type     | Description
-------------|----------|------------
-`onError`   | function | An optional handler for the [error] event.
-`onLoad`    | function | An optional handler for the [load] event.
-`src`       | string   | The URL of the image to be loaded, will be passed as the src prop to your first child provided. If you want to use it as a background image, make your first child a react component like Name = (props) => <div style={{backgroundImage: props.src}}/> and do <Name/>
-`srcSet`    | string   | An optional value for the srcset attribute of the img
+Name          | Type     | Description
+--------------|----------|------------
+`onError`     | function | An optional handler for the [error] event.
+`onLoad`      | function | An optional handler for the [load] event.
+`src`         | string   | The URL of the image to be loaded, will be passed as the src prop to your first child provided. If you want to use it as a background image, make your first child a react component like Name = (props) => <div style={{backgroundImage: props.src}}/> and do <Name/>
+`srcSet`      | string   | An optional value for the srcset attribute of the img
+`wrapperProps`| object   | An optional extra props for the wrapper. 
+`pure`        | boolean  | If it's true, the library will render without a wrapper. Default is false. 
 
 
 Children
