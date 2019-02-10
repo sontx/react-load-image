@@ -3,23 +3,12 @@ import classNames from "classnames";
 
 export type Status = "pending" | "loading" | "loaded" | "failed";
 
-export interface ImageLoaderProps  {
-	src: string;
-	srcSet?: string;
+export interface ImageLoaderProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 	/**
 	 * Render children without a wrapper.
 	 */
 	pure?: boolean;
 	wrapperProps?: React.HTMLAttributes<HTMLDivElement>;
-	className?: string;
-	style?: React.CSSProperties;
-	/**
-	 * There are three children tags follow these order:
-	 * 1. the image is loaded successfully and will be rendered here (usually an img tag).
-	 * 2. the image is loading failed, this child tag will be shown.
-	 * 3. the image is still loading or pending, this child tag will be shown.
-	 */
-	children?: React.ReactNode;
 	onLoad?(event: React.SyntheticEvent<HTMLDivElement, Event>): void;
 	onError?(event: React.SyntheticEvent<HTMLDivElement, Event>): void;
 }
