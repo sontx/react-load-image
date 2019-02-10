@@ -1,6 +1,6 @@
 {
   "name": "@sontx/react-load-image",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A React component for showing placeholder content during image loading",
   "main": "./lib/index.js",
   "scripts": {

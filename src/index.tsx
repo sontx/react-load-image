@@ -41,7 +41,7 @@ export default class ImageLoader extends React.Component<ImageLoaderProps, Image
 		this.handleError = this.handleError.bind(this);
 	}
 
-	createLoader(): void {
+	private createLoader(): void {
 		this.destroyLoader();  // We can only have one loader at a time.
 
 		const img = new Image();
@@ -55,7 +55,7 @@ export default class ImageLoader extends React.Component<ImageLoaderProps, Image
 		this.img = img;
 	}
 
-	destroyLoader(): void {
+	private destroyLoader(): void {
 		if (this.img) {
 			this.img.onload = null;
 			this.img.onerror = null;
@@ -63,14 +63,14 @@ export default class ImageLoader extends React.Component<ImageLoaderProps, Image
 		}
 	}
 
-	handleLoad(event): void {
+	private handleLoad(event): void {
 		this.destroyLoader();
 		this.setState({status: "loaded"});
 
 		if (this.props.onLoad) this.props.onLoad(event);
 	}
 
-	handleError(error): void {
+	private handleError(error): void {
 		this.destroyLoader();
 		this.setState({status: "failed"});
 
